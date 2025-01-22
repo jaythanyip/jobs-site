@@ -60,11 +60,10 @@ function SignupPage() {
             <div className="login-left-header">
               <div className="login-left-header-top">
                 Welcome!
-                <br /> Please login account
+                <br /> First things first....
               </div>
               <div className="login-left-header-desc">
-                The platform is committed to providing you with updated and more
-                <br /> comprehensive working data
+                Create your own separate account
               </div>
             </div>
             <img src={bg} />
