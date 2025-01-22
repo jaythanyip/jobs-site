@@ -36,3 +36,45 @@
     transform: rotate(360deg);
   }
 }
+
+/* 隐藏滚动条 */
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+.header {
+  background-image: url("../public/topbanner.png"); /* 替换为你的图片 URL */
+  background-size: 120%;
+  /* background-position: center; */
+  background-position-x: -80px;
+  background-position-y: -80px;
+
+  color: white;
+  text-align: center;
+  height: 25vh;
+  position: relative;
+}
+
+.list-item-header {
+  padding: 5px 0 5px 15px;
+  color: #2a4cfe;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.header-nav {
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+
+  /* justify-content: center; */
+}
+.header-nav-btns {
+  margin-top: 20px;
+  margin-right: 20px;
+}

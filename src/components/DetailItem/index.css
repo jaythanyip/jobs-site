@@ -1,0 +1,31 @@
+/* 卡片的整体样式 */
+.detail-item-wrapper {
+  border-radius: 8px;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  width: 96%;
+  height: 40px;
+  margin: 15px 0;
+}
+
+.detail-item-left {
+  display: flex;
+  align-items: center;
+}
+
+.detail-item-left .ant-avatar {
+  margin: 0 15px 0 0;
+}
+
+.detail-item-left-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.detail-item-left-title-big {
+  font-size: 12px;
+  color: #a5a5a5;
+}

@@ -1,0 +1,208 @@
+.login-wrapper {
+  background-color: rgba(247, 250, 248, 0.96);
+}
+
+.login-wrapper-main {
+  width: 100vw;
+  height: 100vh;
+  /* background: url(../../../public/bg.png); */
+  /* background-size: 50%; */
+
+  display: flex;
+}
+
+.dlp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  /* flex: 1; */
+  /* padding: 0 80px 0 0; */
+}
+
+.login-wrapper {
+  display: flex;
+}
+
+.login-wrapper .login-left {
+  /* flex: 2; */
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  height: 100vh;
+  /* padding: 0 80px; */
+  position: relative;
+}
+
+.login-left img {
+  position: absolute;
+  bottom: 0;
+  height: 50vh;
+}
+
+.login-left-header-top {
+  font-size: 2.4vw;
+  margin-left: 8vw;
+}
+
+.login-left-header-desc {
+  font-size: 1vw;
+  margin-left: 8vw;
+  color: #a5a5a5;
+  margin-top: 20px;
+  line-height: 1.5;
+}
+
+.login-left .login-left-title-wrapper {
+  height: 35vh;
+  display: flex;
+  width: 40vw;
+  justify-content: center;
+  /* justify-content: space-evenly; */
+  flex-direction: column;
+}
+
+.login-left .login-bigtitle {
+  font-size: 70px;
+  color: white;
+}
+
+.login-left .login-cntitle {
+  font-size: 40px;
+  color: white;
+  font-weight: 800;
+}
+
+.login-wrapper .login-card-wrapper {
+  background-color: white;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 8px #13437026;
+  /* width: 420px; */
+  width: 50%;
+  height: 75vh;
+
+  border-radius: 15px;
+  padding: 40px 8vw;
+}
+
+.login-wrapper .login-card-header {
+  /* margin-bottom: 10vh; */
+}
+
+.login-wrapper .login-card-title {
+  font-size: 1.8vw;
+  font-weight: 500;
+  margin-bottom: 6vh;
+  margin-top: 3vh;
+}
+
+.login-wrapper .login-card-subtitle {
+  color: rgba(255, 255, 255, 0.153);
+}
+
+.login-wrapper .login-more {
+  /* margin-bottom: 30px; */
+  font-size: 1vw;
+  margin-top: 4vh;
+  color: #a5a5a5;
+  margin-bottom: 4vh;
+}
+
+.login-wrapper a {
+  text-decoration: none !important;
+}
+
+.login-wrapper .login-more-confirm {
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+/* 屏幕宽度大于等于 1024px 时应用 */
+@media (min-width: 1824px) {
+}
+
+.login-google {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.icon-container {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px; /* 图标容器的宽度 */
+  height: 48px; /* 图标容器的高度 */
+  border: 1px solid #595959; /* 边框颜色 */
+  border-radius: 50%; /* 圆形边框 */
+  transition: all 0.3s ease; /* 平滑过渡 */
+  cursor: pointer;
+}
+
+.option-container .anticon-google {
+  font-size: 24px; /* 图标大小 */
+  color: #595959; /* 默认颜色 */
+  transition: color 0.3s ease;
+}
+
+/* .option-container:hover {
+  border-color: #8f98d8;
+}
+
+.option-container .anticon {
+  color: #8f98d8;
+} */
+
+.option-container .anticon {
+  font-size: 1.4vw;
+}
+
+.option-container {
+  height: 5vh;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 2vh;
+}
+
+.login-divider {
+  font-size: 1.2vw;
+}
+
+.login-button {
+  font-size: 1vw;
+  height: 5vh;
+}
+
+.option-container .btn {
+  height: 100%;
+  width: 48%;
+}
+
+/* .login-wrapper .ant-input:hover, */
+.login-wrapper .ant-input-affix-wrapper:hover {
+  border-color: transparent;
+  border: none;
+  border-bottom: 1px solid #a5a5a5;
+}
+
+.login-wrapper .ant-input,
+.login-wrapper .ant-input-affix-wrapper {
+  border-radius: 0px;
+  font-size: 1.2vw;
+  border: none;
+  border-bottom: 1px solid #a5a5a5;
+  margin-top: 0.8vh;
+}
+/* .login-wrapper .ant-input:focus, */
+.login-wrapper .ant-input-affix-wrapper:focus,
+.login-wrapper .ant-input-outlined:focus-within {
+  border-color: transparent;
+  border: none;
+  border-bottom: 1px solid #a5a5a5;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
