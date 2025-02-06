@@ -4,7 +4,7 @@
   width: 100%;
   justify-content: center;
   height: 8vh;
-  padding-left: 10vw;
+  padding: 0 10vw;
 }
 
 .region-search-wrapper .ant-input-affix-wrapper {

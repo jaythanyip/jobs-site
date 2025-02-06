@@ -3,7 +3,7 @@ import { Avatar, Button, Checkbox, Divider, Form, Input } from "antd";
 
 import { message } from "antd";
 import { useNavigate } from "react-router-dom";
-// import { md5 } from "js-md5";
+import { md5 } from "js-md5";
 import title from "../../assets/title.png";
 import "./index.css";
 import {
@@ -12,25 +12,26 @@ import {
   WechatOutlined,
 } from "@ant-design/icons";
 import bg from "../../assets/bg.png";
+import { userLogin } from "../../api/Api";
 
 function LoginPage() {
   const navigate = useNavigate();
 
   const handleSubmit = async (values: any) => {
-    // try {
-    //   const res = await userLogin({
-    //     email: values?.username,
-    //     password: md5(values?.password),
-    //   });
-    //   if (res) {
-    //     message.success("Account login successful.");
-    //     setNewToken(res.accessToken);
-    //     navigate("/dlp/task");
-    //   }
-    // } catch (e: any) {
-    //   message.error("Account login failed.");
-    //   console.log(e);
-    // }
+    try {
+      const res = await userLogin({
+        email: values?.username,
+        password: md5(values?.password),
+      });
+      if (res) {
+        message.success("Account login successful.");
+        // setNewToken(res.accessToken);
+        // navigate("");
+      }
+    } catch (e: any) {
+      message.error("Account login failed.");
+      console.log(e);
+    }
   };
 
   const onFinishFailed = (errorInfo: any) => {

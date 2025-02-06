@@ -7,20 +7,14 @@ import {
   EnvironmentOutlined,
 } from "@ant-design/icons";
 import "./index.css"; // 引入 CSS 文件
+import axios from "axios";
 
 const { Option } = Select;
 
-const SearchComponent: React.FC = () => {
-  const [searchValue, setSearchValue] = useState<string>("");
-  const [region, setRegion] = useState<string | undefined>(undefined);
-
-  const handleSearch = () => {
-    console.log("Search value:", searchValue);
-    console.log("Selected region:", region);
-  };
-
+const SearchComponent = ({ searchValues, onChange, handleSearch }: any) => {
   const handleRegionChange = (value: string) => {
-    setRegion(value);
+    // setRegion(value);
+    onChange({ ...searchValues, tag: value });
   };
 
   return (
@@ -33,9 +27,75 @@ const SearchComponent: React.FC = () => {
             style={{ color: "rgba(0,0,0,.25)", marginRight: 12 }}
           />
         }
-        value={searchValue}
-        onChange={(e) => setSearchValue(e.target.value)}
-        placeholder="Job title or keyword"
+        value={searchValues.jobTitle}
+        onChange={(e) =>
+          onChange({ ...searchValues, jobTitle: e.target.value })
+        }
+        placeholder="Job title"
+        suffix={
+          <Button
+            shape="round"
+            icon={<FieldTimeOutlined />}
+            onClick={() => console.log("Filter button clicked")}
+            style={{ fontSize: 12 }}
+          >
+            Add Reminder
+          </Button>
+        }
+      />
+      <Input
+        prefix={
+          <SearchOutlined
+            style={{ color: "rgba(0,0,0,.25)", marginRight: 12 }}
+          />
+        }
+        value={searchValues.company}
+        onChange={(e) => onChange({ ...searchValues, company: e.target.value })}
+        placeholder="company"
+        suffix={
+          <Button
+            shape="round"
+            icon={<FieldTimeOutlined />}
+            onClick={() => console.log("Filter button clicked")}
+            style={{ fontSize: 12 }}
+          >
+            Add Reminder
+          </Button>
+        }
+      />
+      <Input
+        // style={{}}
+        prefix={
+          <SearchOutlined
+            style={{ color: "rgba(0,0,0,.25)", marginRight: 12 }}
+          />
+        }
+        value={searchValues.city}
+        onChange={(e) => onChange({ ...searchValues, city: e.target.value })}
+        placeholder="city"
+        suffix={
+          <Button
+            shape="round"
+            icon={<FieldTimeOutlined />}
+            onClick={() => console.log("Filter button clicked")}
+            style={{ fontSize: 12 }}
+          >
+            Add Reminder
+          </Button>
+        }
+      />
+      <Input
+        // style={{}}
+        prefix={
+          <SearchOutlined
+            style={{ color: "rgba(0,0,0,.25)", marginRight: 12 }}
+          />
+        }
+        value={searchValues.jobDescription}
+        onChange={(e) =>
+          onChange({ ...searchValues, jobDescription: e.target.value })
+        }
+        placeholder="jobDescription"
         suffix={
           <Button
             shape="round"
@@ -48,20 +108,21 @@ const SearchComponent: React.FC = () => {
         }
       />
 
-      <Select
-        value={region}
+      {/* <Select
+        value={searchValues.tag}
         onChange={handleRegionChange}
         placeholder={
           <>
             <EnvironmentOutlined style={{ marginRight: 10 }} />
-            Select Location
+            Select TAG
           </>
         }
       >
-        <Option value="Asia">Asia</Option>
-        <Option value="Europe">Europe</Option>
-        <Option value="America">America</Option>
-      </Select>
+        <Option value="job_title">职位名称</Option>
+        <Option value="company">公司</Option>
+        <Option value="city">城市</Option>
+        <Option value="job_description">职位描述</Option>
+      </Select> */}
 
       <Button
         type="primary"

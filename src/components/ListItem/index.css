@@ -26,6 +26,7 @@
   height: 50%;
   justify-content: space-between;
   font-size: 1.4vh;
+  width: 14vw;
 }
 
 .ant-list-item {
@@ -36,6 +37,7 @@
 .list-item-left {
   display: flex;
   height: 50%;
+  width: 25vw;
 }
 
 .list-item-left .ant-avatar {
@@ -51,8 +53,22 @@
 .list-item-left-title-big {
   /* font-size: 22px; */
   font-size: 2vh;
-  display: flex;
+  /* display: flex; */
   align-items: center;
+
+  width: 200px; /* 设置最大宽度 */
+  white-space: nowrap; /* 禁止换行 */
+  overflow: hidden; /* 超出部分隐藏 */
+  text-overflow: ellipsis; /* 超出部分显示省略号 */
+  cursor: pointer; /* 增加鼠标悬浮效果 */
+}
+
+.part-content {
+  width: 10vw; /* 设置最大宽度 */
+  white-space: nowrap; /* 禁止换行 */
+  overflow: hidden; /* 超出部分隐藏 */
+  text-overflow: ellipsis; /* 超出部分显示省略号 */
+  cursor: pointer; /* 增加鼠标悬浮效果 */
 }
 
 .list-item-left-title-small {
