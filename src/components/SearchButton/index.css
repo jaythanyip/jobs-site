@@ -14,9 +14,19 @@
   height: 100%;
 
   border-right: 1px #a5a5a5 solid;
-  border-radius: 5px 0 0 5px;
+  /* border-radius: 5px 0 0 5px; */
+  border-radius: 0;
   font-size: 1.2vw;
   padding: 1vw;
+}
+
+.region-search-wrapper .ant-input-affix-wrapper:first-child {
+  border-radius: 15px 0 0 15px;
+}
+
+.region-search-wrapper .ant-input-affix-wrapper:nth-child(4) {
+  border-radius: 0 15px 15px 0;
+  border-color: transparent;
 }
 
 .region-search-wrapper .ant-select {

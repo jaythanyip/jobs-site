@@ -10,6 +10,7 @@ import {
 } from "@ant-design/icons";
 import "./index.css";
 import { hover } from "@testing-library/user-event/dist/hover";
+import { useNavigate } from "react-router-dom";
 
 const { Title, Text } = Typography;
 
@@ -39,8 +40,13 @@ const ListItem: React.FC<ListItemCardProps> = ({
     similarity,
     avatarUrl,
   } = item;
+  const navigate = useNavigate();
+  const handleClickCard = () => {
+    window.open(`${job_url}`, "_blank");
+  };
+
   return (
-    <div className="list-item-wrapper">
+    <div className="list-item-wrapper" onClick={handleClickCard}>
       <div className="list-item-left">
         <Avatar
           src={avatarUrl}
@@ -83,7 +89,7 @@ const ListItem: React.FC<ListItemCardProps> = ({
         </div>
       </div>
 
-      <div className="part">
+      {/* <div className="part">
         <div className="part-content">
           <MoneyCollectOutlined style={{ color: "#2A4CFE", marginRight: 10 }} />
           10k~14k
@@ -92,12 +98,12 @@ const ListItem: React.FC<ListItemCardProps> = ({
           <InboxOutlined style={{ color: "#2A4CFE", marginRight: 10 }} />
           Full-time
         </div>
-      </div>
+      </div> */}
 
       <div className="part">
         <div className="comp-box">
           <div className="comp-box-value">{similarity?.toFixed(2)}</div>
-          <div className="comp-box-bottom">compliance</div>
+          {/* <div className="comp-box-bottom">compliance</div> */}
         </div>
       </div>
 

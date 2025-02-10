@@ -14,6 +14,7 @@ import { Route, Routes } from "react-router-dom";
 import LoginPage from "./components/Login";
 import JobPage from "./JobPage";
 import SignupPage from "./components/Signup";
+import UnsubscribePage from "./components/Unsubscribe";
 
 const { Header, Content } = Layout;
 
@@ -25,6 +26,7 @@ const App: React.FC = () => {
       <Route path="/signup" element={<SignupPage />} />
 
       <Route path="/jobs" element={<JobPage />} />
+      <Route path="/unsubscribe" element={<UnsubscribePage />} />
     </Routes>
     // <Layout style={{ minHeight: "100vh" }}>
     //   {/* 固定的 Header */}

@@ -25,8 +25,7 @@ function LoginPage() {
       });
       if (res) {
         message.success("Account login successful.");
-        // setNewToken(res.accessToken);
-        // navigate("");
+        navigate("/");
       }
     } catch (e: any) {
       message.error("Account login failed.");

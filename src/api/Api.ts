@@ -16,7 +16,7 @@ export const userLogin = (params: { email: string; password: string }) =>
  * @param {object} params 参数
  * @constructor
  */
-export const SignUpApi = (params: {
+export const userSignup = (params: {
 	name: string;
 	email: string;
 	password: string;

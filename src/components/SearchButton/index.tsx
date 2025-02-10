@@ -11,7 +11,12 @@ import axios from "axios";
 
 const { Option } = Select;
 
-const SearchComponent = ({ searchValues, onChange, handleSearch }: any) => {
+const SearchComponent = ({
+  searchValues,
+  onChange,
+  handleSearch,
+  setInputVisible,
+}: any) => {
   const handleRegionChange = (value: string) => {
     // setRegion(value);
     onChange({ ...searchValues, tag: value });
@@ -31,17 +36,17 @@ const SearchComponent = ({ searchValues, onChange, handleSearch }: any) => {
         onChange={(e) =>
           onChange({ ...searchValues, jobTitle: e.target.value })
         }
-        placeholder="Job title"
-        suffix={
-          <Button
-            shape="round"
-            icon={<FieldTimeOutlined />}
-            onClick={() => console.log("Filter button clicked")}
-            style={{ fontSize: 12 }}
-          >
-            Add Reminder
-          </Button>
-        }
+        placeholder="Job title (Optional)"
+        // suffix={
+        //   <Button
+        //     shape="round"
+        //     icon={<FieldTimeOutlined />}
+        //     onClick={() => console.log("Filter button clicked")}
+        //     style={{ fontSize: 12 }}
+        //   >
+        //     Track Jobs
+        //   </Button>
+        // }
       />
       <Input
         prefix={
@@ -51,17 +56,17 @@ const SearchComponent = ({ searchValues, onChange, handleSearch }: any) => {
         }
         value={searchValues.company}
         onChange={(e) => onChange({ ...searchValues, company: e.target.value })}
-        placeholder="company"
-        suffix={
-          <Button
-            shape="round"
-            icon={<FieldTimeOutlined />}
-            onClick={() => console.log("Filter button clicked")}
-            style={{ fontSize: 12 }}
-          >
-            Add Reminder
-          </Button>
-        }
+        placeholder="Company (Optional)"
+        // suffix={
+        //   <Button
+        //     shape="round"
+        //     icon={<FieldTimeOutlined />}
+        //     onClick={() => console.log("Filter button clicked")}
+        //     style={{ fontSize: 12 }}
+        //   >
+        //     Add Reminder
+        //   </Button>
+        // }
       />
       <Input
         // style={{}}
@@ -72,17 +77,17 @@ const SearchComponent = ({ searchValues, onChange, handleSearch }: any) => {
         }
         value={searchValues.city}
         onChange={(e) => onChange({ ...searchValues, city: e.target.value })}
-        placeholder="city"
-        suffix={
-          <Button
-            shape="round"
-            icon={<FieldTimeOutlined />}
-            onClick={() => console.log("Filter button clicked")}
-            style={{ fontSize: 12 }}
-          >
-            Add Reminder
-          </Button>
-        }
+        placeholder="City (Optional)"
+        // suffix={
+        //   <Button
+        //     shape="round"
+        //     icon={<FieldTimeOutlined />}
+        //     onClick={() => console.log("Filter button clicked")}
+        //     style={{ fontSize: 12 }}
+        //   >
+        //     Add Reminder
+        //   </Button>
+        // }
       />
       <Input
         // style={{}}
@@ -95,17 +100,17 @@ const SearchComponent = ({ searchValues, onChange, handleSearch }: any) => {
         onChange={(e) =>
           onChange({ ...searchValues, jobDescription: e.target.value })
         }
-        placeholder="jobDescription"
-        suffix={
-          <Button
-            shape="round"
-            icon={<FieldTimeOutlined />}
-            onClick={() => console.log("Filter button clicked")}
-            style={{ fontSize: 12 }}
-          >
-            Add Reminder
-          </Button>
-        }
+        placeholder="Job Description (Optional)"
+        // suffix={
+        //   <Button
+        //     shape="round"
+        //     icon={<FieldTimeOutlined />}
+        //     onClick={() => console.log("Filter button clicked")}
+        //     style={{ fontSize: 12 }}
+        //   >
+        //     Add Reminder
+        //   </Button>
+        // }
       />
 
       {/* <Select
@@ -127,9 +132,29 @@ const SearchComponent = ({ searchValues, onChange, handleSearch }: any) => {
       <Button
         type="primary"
         onClick={handleSearch}
-        style={{ height: "90%", fontSize: 20, marginLeft: 20, width: 150 }}
+        style={{
+          height: "90%",
+          fontSize: 20,
+          marginLeft: 20,
+          width: 150,
+          borderRadius: 15,
+        }}
       >
         Search
+      </Button>
+      <Button
+        // shape="round"
+        // icon={<FieldTimeOutlined />}
+        onClick={() => setInputVisible(true)}
+        style={{
+          height: "90%",
+          fontSize: 20,
+          marginLeft: 20,
+          width: 150,
+          borderRadius: 15,
+        }}
+      >
+        Track Jobs
       </Button>
     </div>
   );

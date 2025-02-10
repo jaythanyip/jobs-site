@@ -5,6 +5,10 @@
   /* width: 330px; */
 }
 
+.personal-card-wrapper .ant-upload {
+  width: 100% !important;
+}
+
 .personal-card-header {
   display: flex;
   flex-direction: column;

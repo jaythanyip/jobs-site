@@ -10,6 +10,8 @@ import {
   WechatOutlined,
 } from "@ant-design/icons";
 import bg from "../../assets/bg.png";
+import { md5 } from "js-md5";
+import { userSignup } from "../../api/Api";
 
 function SignupPage() {
   const navigate = useNavigate();
@@ -32,20 +34,21 @@ function SignupPage() {
   };
 
   const handleSubmit = async (values: any) => {
-    // try {
-    //   const res = await userSignup({
-    //     name: values?.username,
-    //     email: values?.email,
-    //     password: md5(values?.password),
-    //   });
-    //   if (res) {
-    //     message.success("Sign Up successfully");
-    //     handleSendCode(values?.email);
-    //     navigate("/verify", { state: { email: values?.email } });
-    //   }
-    // } catch (e: any) {
-    //   message.error(e?.message ?? e?.toString());
-    // }
+    try {
+      const res = await userSignup({
+        name: values?.username,
+        email: values?.email,
+        password: md5(values?.password),
+      });
+      if (res) {
+        message.success("Sign Up successfully");
+        navigate("/login");
+        // handleSendCode(values?.email);
+        // navigate("/verify", { state: { email: values?.email } });
+      }
+    } catch (e: any) {
+      message.error(e?.message ?? e?.toString());
+    }
   };
 
   const onFinishFailed = (errorInfo: any) => {
@@ -94,7 +97,7 @@ function SignupPage() {
 
               <Form.Item
                 // label="Account"
-                name="username"
+                name="email"
                 rules={[
                   { required: true, message: "Please input your email!" },
                 ]}
